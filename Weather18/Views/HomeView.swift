@@ -9,15 +9,16 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @State private var showLocationError: Bool = false
     @StateObject private var locationManager =  LocationManagerObservable()
     @ObservedObject var weatherViewModel = WeatherViewModel(with: OpenWeatherMapServices())
     
     private var latitude: Double {
-        return locationManager.currentLocation?.coordinate.latitude ?? 0
+        return locationManager.currentLocation?.coordinate.latitude ?? -1
     }
     
     private var longitude: Double {
-        return locationManager.currentLocation?.coordinate.longitude ?? 0
+        return locationManager.currentLocation?.coordinate.longitude ?? -1
     }
     
     
@@ -28,27 +29,27 @@ struct HomeView: View {
             Button("What's my current weather?") {
                 
                 if locationManager.locationStatus != .authorizedWhenInUse {
-                    locationManager.requestLocationAccess()
-                    Task {
-                        await fetchWeather()
-                    }
+                    
+                    showLocationError = true
                 } else {
+                    showLocationError = false
                     Task {
                         await fetchWeather()
                     }
                 }
                 
             }
+            .alert("Provide location access from setting",isPresented: $showLocationError) {
+                Button("OK", role: .cancel){ }
+            }
             
             Divider()
             
             Text(weatherViewModel.weatherInfo)
-            
-            
-            
         }
-        
-        
+        .onAppear(perform: {
+            locationManager.requestLocationAccess()
+        })
         .padding()
         .tabItem {
             Label("Current", systemImage: "location")
@@ -69,7 +70,7 @@ struct HomeView: View {
             print(error.localizedDescription)
         }
     }
-        
+    
 }
 
 struct HomeView_Previews: PreviewProvider {
