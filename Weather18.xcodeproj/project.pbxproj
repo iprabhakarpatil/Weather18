@@ -13,6 +13,7 @@
 		B01D4ECE2A9F186C00E11152 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B01D4ECD2A9F186C00E11152 /* Preview Assets.xcassets */; };
 		B01D4EDA2A9F250E00E11152 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01D4ED92A9F250E00E11152 /* HomeView.swift */; };
 		B01D4EDD2A9F252000E11152 /* GlobalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01D4EDC2A9F252000E11152 /* GlobalView.swift */; };
+		B01D4EE12A9F2AA100E11152 /* LocationManagerObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01D4EE02A9F2AA100E11152 /* LocationManagerObservable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B01D4ED92A9F250E00E11152 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B01D4EDC2A9F252000E11152 /* GlobalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalView.swift; sourceTree = "<group>"; };
 		B01D4EDE2A9F275E00E11152 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B01D4EE02A9F2AA100E11152 /* LocationManagerObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerObservable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,12 +60,13 @@
 			children = (
 				B01D4EDE2A9F275E00E11152 /* Info.plist */,
 				B01D4EC62A9F186B00E11152 /* Weather18App.swift */,
-				B01D4ED82A9F234900E11152 /* Networkings */,
-				B01D4ED72A9F234300E11152 /* ViewModels */,
-				B01D4ED62A9F233E00E11152 /* Models */,
-				B01D4ED42A9F233200E11152 /* Views */,
 				B01D4ECA2A9F186C00E11152 /* Assets.xcassets */,
+				B01D4EDF2A9F2A5B00E11152 /* LocationManagers */,
+				B01D4ED62A9F233E00E11152 /* Models */,
+				B01D4ED82A9F234900E11152 /* Networkings */,
 				B01D4ECC2A9F186C00E11152 /* Preview Content */,
+				B01D4ED72A9F234300E11152 /* ViewModels */,
+				B01D4ED42A9F233200E11152 /* Views */,
 			);
 			path = Weather18;
 			sourceTree = "<group>";
@@ -105,6 +108,14 @@
 			children = (
 			);
 			path = Networkings;
+			sourceTree = "<group>";
+		};
+		B01D4EDF2A9F2A5B00E11152 /* LocationManagers */ = {
+			isa = PBXGroup;
+			children = (
+				B01D4EE02A9F2AA100E11152 /* LocationManagerObservable.swift */,
+			);
+			path = LocationManagers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 				B01D4EDA2A9F250E00E11152 /* HomeView.swift in Sources */,
 				B01D4EC92A9F186B00E11152 /* ContentView.swift in Sources */,
 				B01D4EC72A9F186B00E11152 /* Weather18App.swift in Sources */,
+				B01D4EE12A9F2AA100E11152 /* LocationManagerObservable.swift in Sources */,
 				B01D4EDD2A9F252000E11152 /* GlobalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
