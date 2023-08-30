@@ -52,7 +52,10 @@
 			isa = PBXGroup;
 			children = (
 				B01D4EC62A9F186B00E11152 /* Weather18App.swift */,
-				B01D4EC82A9F186B00E11152 /* ContentView.swift */,
+				B01D4ED82A9F234900E11152 /* Networkings */,
+				B01D4ED72A9F234300E11152 /* ViewModels */,
+				B01D4ED62A9F233E00E11152 /* Models */,
+				B01D4ED42A9F233200E11152 /* Views */,
 				B01D4ECA2A9F186C00E11152 /* Assets.xcassets */,
 				B01D4ECC2A9F186C00E11152 /* Preview Content */,
 			);
@@ -65,6 +68,35 @@
 				B01D4ECD2A9F186C00E11152 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B01D4ED42A9F233200E11152 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B01D4EC82A9F186B00E11152 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B01D4ED62A9F233E00E11152 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B01D4ED72A9F234300E11152 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B01D4ED82A9F234900E11152 /* Networkings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networkings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
