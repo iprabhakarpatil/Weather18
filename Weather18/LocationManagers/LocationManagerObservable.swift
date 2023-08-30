@@ -7,11 +7,12 @@
 
 import Foundation
 import CoreLocation
+import Combine
 
-class LocationManagerObservable: NSObject, ObservableObject {
+class LocationManagerObservable: NSObject, ObservableObject  {
     
     private let locationManager = CLLocationManager()
-
+    
     @Published private (set) var locationStatus: CLAuthorizationStatus?
     @Published private (set) var currentLocation: CLLocation?
     
@@ -20,6 +21,9 @@ class LocationManagerObservable: NSObject, ObservableObject {
         super.init()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest /// set the location accuracy to best for fetching desired results.
+    }
+    
+    func requestLocationAccess() {
         locationManager.requestWhenInUseAuthorization() /// only authorised to use when weather app is open.
         locationManager.startUpdatingLocation() /// start the location services.
     }

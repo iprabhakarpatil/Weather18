@@ -10,24 +10,31 @@ import SwiftUI
 struct GlobalView: View {
     
     @State var city: String
+    @ObservedObject var weatherViewModel = WeatherViewModel(with: OpenWeatherMapServices())
     
     var body: some View {
         
         VStack {
-            TextField("eg. Bengaluru", text: $city, onCommit: {
+            TextField("Enter city", text: $city, onCommit: {
                 
                 if !city.isEmpty {
-                    print("Call the api services")
+                    Task {
+                        do {
+                            try await weatherViewModel.fetchWeather(for: city)
+                        } catch {
+                            print("Error: ", error.localizedDescription)
+                        }
+                    }
                 }
-                
             })
+        
             .padding()
-            .font(.title)
+            .font(.body)
             .foregroundColor(.white)
             
             Divider().padding()
             
-            Text("Enter the city to know the current weather.")
+            Text(weatherViewModel.weatherInfo)
                 .font(.title2)
                 .fontWeight(.bold)
                 .foregroundColor(.white)
@@ -40,7 +47,6 @@ struct GlobalView: View {
             Label("Global",
                   systemImage: "globe.asia.australia.fill")
         }
-        
     }
 }
 

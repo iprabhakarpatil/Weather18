@@ -19,7 +19,7 @@ public protocol WebServicable {
     
     var apikey: String { get }
     
-    func fetchGeocode(for city: String) async throws -> (latitude: String?, longitude: String?)
+    func fetchGeocode(for city: String) async throws -> (latitude: Double?, longitude: Double?)
     func fetchWeatherData(for geocodes: (latitude: Double, longitude: Double)) async throws -> (String?, WebServicableError?)
 }
 

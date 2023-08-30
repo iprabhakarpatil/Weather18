@@ -18,6 +18,7 @@
 		B01D4EE52A9F2EEE00E11152 /* LocationGeocode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01D4EE42A9F2EEE00E11152 /* LocationGeocode.swift */; };
 		B01D4EE72A9F2F2C00E11152 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01D4EE62A9F2F2C00E11152 /* WeatherDataModel.swift */; };
 		B01D4EE92A9F2FFB00E11152 /* OpenWeatherMapServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01D4EE82A9F2FFB00E11152 /* OpenWeatherMapServices.swift */; };
+		B01D4EED2A9F34C600E11152 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01D4EEC2A9F34C600E11152 /* WeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B01D4EE42A9F2EEE00E11152 /* LocationGeocode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationGeocode.swift; sourceTree = "<group>"; };
 		B01D4EE62A9F2F2C00E11152 /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
 		B01D4EE82A9F2FFB00E11152 /* OpenWeatherMapServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapServices.swift; sourceTree = "<group>"; };
+		B01D4EEC2A9F34C600E11152 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		B01D4ED72A9F234300E11152 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B01D4EEC2A9F34C600E11152 /* WeatherViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				B01D4EDA2A9F250E00E11152 /* HomeView.swift in Sources */,
 				B01D4EC92A9F186B00E11152 /* ContentView.swift in Sources */,
 				B01D4EE52A9F2EEE00E11152 /* LocationGeocode.swift in Sources */,
+				B01D4EED2A9F34C600E11152 /* WeatherViewModel.swift in Sources */,
 				B01D4EE72A9F2F2C00E11152 /* WeatherDataModel.swift in Sources */,
 				B01D4EC72A9F186B00E11152 /* Weather18App.swift in Sources */,
 				B01D4EE12A9F2AA100E11152 /* LocationManagerObservable.swift in Sources */,

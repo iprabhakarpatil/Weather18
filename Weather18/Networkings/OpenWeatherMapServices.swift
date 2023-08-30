@@ -13,7 +13,7 @@ struct OpenWeatherMapServices: WebServicable {
     /// Fetch the respective geocodes for the city entered to pass it the webservices for fetching the weather info in async
     /// - Parameter city:String
     /// - Returns: throwable (latitude: String?, longitude: String?)
-    func fetchGeocode(for city: String) async throws -> (latitude: String?, longitude: String?) {
+    func fetchGeocode(for city: String) async throws -> (latitude: Double?, longitude: Double?) {
         
         let geocodeEndPoint = "https://api.openweathermap.org/geo/1.0/direct?q=\(city)&appid=\(apikey)"
         
@@ -42,7 +42,7 @@ struct OpenWeatherMapServices: WebServicable {
             }
             
             print("\(latitude)", "\(longitude)")
-            return ("\(latitude)", "\(longitude)")
+            return (latitude,longitude)
             
         } catch let error {
             

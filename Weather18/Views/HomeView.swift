@@ -10,24 +10,46 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject private var locationManager =  LocationManagerObservable()
+    @ObservedObject var weatherViewModel = WeatherViewModel(with: OpenWeatherMapServices())
     
-    private var latitude: String? {
-        return "\(locationManager.currentLocation?.coordinate.latitude)"
+    private var latitude: Double {
+        return locationManager.currentLocation?.coordinate.latitude ?? 0
     }
     
-    private var longitude: String? {
-        return "\(locationManager.currentLocation?.coordinate.longitude)"
+    private var longitude: Double {
+        return locationManager.currentLocation?.coordinate.longitude ?? 0
     }
     
     
     var body: some View {
         
-        VStack(alignment: .leading){
+        VStack(alignment: .center){
+            
+            Button("What's my current weather?") {
+                
+                if locationManager.locationStatus != .authorizedWhenInUse {
+                    locationManager.requestLocationAccess()
+                    Task {
+                        await fetchWeather()
+                    }
+                } else {
+                    Task {
+                        await fetchWeather()
+                    }
+                }
+                
+            }
+            
+            Divider()
+            
+            Text(weatherViewModel.weatherInfo)
             
             
             
         }
         
+        
+        .padding()
         .tabItem {
             Label("Current", systemImage: "location")
         }
@@ -36,6 +58,18 @@ struct HomeView: View {
                                     startPoint: .top,
                                     endPoint: .bottom))
     }
+    
+    
+    
+    func fetchWeather() async {
+        do {
+            try await weatherViewModel.fetchWeather(for: latitude, lon: longitude)
+            
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+        
 }
 
 struct HomeView_Previews: PreviewProvider {
